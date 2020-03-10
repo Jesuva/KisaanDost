@@ -7,7 +7,7 @@
 // <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
 
 // (function (){
-
+    console.log("app works");
 
     var firebaseConfig = {
         apiKey: "AIzaSyAF1yL7K0lMUPYljmuQBQlGR-z_RkjUjaA",
@@ -22,7 +22,7 @@
       firebase.initializeApp(firebaseConfig);
       
       
-      var firestore = firebase.firestore();
+
       var fireauth = firebase.auth();
       var provider = new firebase.auth.GoogleAuthProvider();
       
@@ -66,7 +66,7 @@ let mobileDOM = document.querySelector('#Mobilenumber');
 let aadharDOM = document.querySelector('#aadharnumber');
 
 
-
+//no needed
 function signInWithEmail(){
     let email = emailDOM.value;
     let password = passwordDOM.value;
@@ -83,3 +83,9 @@ function signInWithEmail(){
         // ...
       });
 }
+
+(function recaptcha(){
+    window.recaptchaVerifier = new firebase.auth.recaptchaVerifier('recaptchacontainer');
+    recaptchaVerifier.render();
+})();
+

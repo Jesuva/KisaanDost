@@ -31,6 +31,25 @@
 </head>
 
 <body class="goto-here">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="py-1 bg-primary">
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -108,6 +127,10 @@
                                         <input type="text " name="aadharnumber " id="aadharnumber " class="form-control " placeholder="Aadhar">
                                         </textarea>
                                     </div>
+                                    <div class="form-group ">
+                                        <div id="recaptchacontainer"></div><br>
+                                    </div>
+
                                     <div class="form-group row">
                                         <input type="submit " value="Register" class="btn btn-primary py-3 col-md-12" />
                                     </div>
@@ -579,7 +602,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false "></script>
     <script src="js/google-map.js "></script>
     <script src="js/main.js "></script>
+    <!-- firebaseapp -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+    <script src="firebase/firebaseapp.js"></script>
 </body>
 
 </html>
