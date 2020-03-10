@@ -64,28 +64,58 @@ let nameDOM = document.querySelector('#name');
 let emailDOM = document.querySelector('#email');
 let mobileDOM = document.querySelector('#Mobilenumber');
 let aadharDOM = document.querySelector('#aadharnumber');
-
+let OTPDOM = document.querySelector('#OTP');
+let modalDOM = document.querySelector('#captchacode')
 
 //no needed
-function signInWithEmail(){
-    let email = emailDOM.value;
-    let password = passwordDOM.value;
+// function signInWithEmail(){
+//     let email = emailDOM.value;
+//     let password = passwordDOM.value;
  
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() =>{
-        console.log('email user account creation succcessful')
-    })
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert('UserAccount creation with email, problem: '+errorMessage)
-        // ...
-      });
-}
-
+//     firebase.auth().createUserWithEmailAndPassword(email, password)
+//     .then(() =>{
+//         console.log('email user account creation succcessful')
+//     })
+//     .catch(function(error) {
+//         // Handle Errors here.
+//         var errorCode = error.code;
+//         var errorMessage = error.message;
+//         alert('UserAccount creation with email, problem: '+errorMessage)
+//         // ...
+//       });
+// }
+firebase.auth().languageCode = 'en';
 (function recaptcha(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptchacontainer');
-    recaptchaVerifier.render();
+    recaptchaVerifier.render().then(function(widgetId) {
+        window.recaptchaWidgetId = widgetId;
+      });
 })();
 
+
+
+function register(){
+    var phoneNumber = '+91'+mobileDOM.value
+    var appVerifier = window.recaptchaVerifier;
+    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+    .then(function (confirmationResult) {
+    console.log(confirmationResult);
+    $('#myModal').modal('show')
+    window.confirmationResult = confirmationResult;
+    }).catch(function (error) {
+    console.log('Error',error)
+    });
+}
+
+
+
+function getOTP() {
+    const otp = parseInt(OTPDOM.value);
+    confirmationResult.confirm(otp).then(function (result) {
+        console.log(result);
+        var user = result.user;
+        // ...
+      }).catch(function (error) {
+        console.log(error);
+      });
+}

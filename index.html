@@ -31,7 +31,7 @@
 </head>
 
 <body class="goto-here">
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="captchacode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -41,11 +41,11 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
+                <input type="text" id="OTP" />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" onclick="getOTP()" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -128,11 +128,10 @@
                                         </textarea>
                                     </div>
                                     <div class="form-group ">
-                                        <div id="recaptchacontainer"></div><br>
+                                        <div id="recaptchacontainer"></div>
                                     </div>
-
                                     <div class="form-group row">
-                                        <input type="submit " value="Register" class="btn btn-primary py-3 col-md-12" />
+                                        <input type="button" onclick="register()" value="Register" class="btn btn-primary py-3 col-md-12" />
                                     </div>
                                 </form>
 
