@@ -100,21 +100,21 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" name="name" id="name" class=" form-control " placeholder="Your Name " required>
-                                    </div>                        
+                                    </div>
+                                    <div class="form-group ">
+                                        <label>Email</label>
+                                        <input type="text " name="email " id="email" class="form-control " placeholder="Your Email ">
+                                    </div>
                                     <div class="form-group ">
                                         <label>Mobile Number</label>
-                                        <input type="text " name="mobilenumber " id="Mobilenumber" class="form-control " placeholder="Number ">
+                                        <input type="text " name="mobilenumber" id="Mobilenumber" class="form-control " placeholder="Number ">
                                     </div>
                                     <div class="form-group ">
                                         <label>Aadhar Number</label>
-                                        <input type="text " name="aadharnumber " id="aadharnumber " class="form-control " placeholder="Aadhar">
+                                        <input type="text " name="aadharnumber " id="aadharnumber" class="form-control " placeholder="Aadhar">
                                     </div>
                                     <div class="form-group ">
                                         <div id="recaptchacontainer"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Enter OTP</label>
-                                        <input type="text" id="captchacode"/>
                                     </div>
                                     <div class="form-group row">
                                         <input type="button" onclick="register()" value="Register" class="btn btn-primary py-3 col-md-12" />
@@ -595,6 +595,8 @@
 
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+    <!-- firebase written script -->
     <script src="firebase/firebaseapp.js"></script>
 </body>
 

@@ -20,6 +20,7 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore();
       
       
 
@@ -96,6 +97,24 @@ function openmodal(){
     $('#mymodal').modal('show');
 }
 
+function saveUserInDB(userid){
+    let name = nameDOM.value;
+    let email = emailDOM.value;
+    let mobile = mobileDOM.value;
+    let aadhar = aadharDOM.value;
+    db.collection('users').add({
+        UserId: userid,
+        Name : name,
+        Email : email,
+        Phone : mobile,
+        Aadhar : aadhar
+    }).then(()=>{
+        console.log("written to database successfully");
+    }).catch((error)=>{
+        console.log("DB Error : ",error);
+    })
+}
+
 function register(){
     var phoneNumber = '+91'+mobileDOM.value
     var appVerifier = window.recaptchaVerifier;
@@ -105,7 +124,7 @@ function register(){
     openmodal();
     window.confirmationResult = confirmationResult;
     }).catch(function (error) {
-    console.log('Error',error);
+    console.log('Register Error',error);
     alert(error.message);
     });
 }
@@ -118,6 +137,7 @@ function getOTP() {
         console.log(result);
         var user = result.user;
         alert("auth sucessful");
+        saveUserInDB(user.uid);
       }).catch(function (error) {
         console.log(error);
         alert(error.message);
