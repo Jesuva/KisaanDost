@@ -65,7 +65,7 @@ let emailDOM = document.querySelector('#email');
 let mobileDOM = document.querySelector('#Mobilenumber');
 let aadharDOM = document.querySelector('#aadharnumber');
 let OTPDOM = document.querySelector('#OTP');
-let modalDOM = document.querySelector('#captchacode')
+// let modalDOM = document.querySelector('#captchacode')
 
 //no needed
 // function signInWithEmail(){
@@ -92,7 +92,9 @@ firebase.auth().languageCode = 'en';
       });
 })();
 
-
+function openmodal(){
+    $('#mymodal').modal('show');
+}
 
 function register(){
     var phoneNumber = '+91'+mobileDOM.value
@@ -100,22 +102,24 @@ function register(){
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
     .then(function (confirmationResult) {
     console.log(confirmationResult);
-    $('#myModal').modal('show')
+    openmodal();
     window.confirmationResult = confirmationResult;
     }).catch(function (error) {
-    console.log('Error',error)
+    console.log('Error',error);
+    alert(error.message);
     });
 }
 
 
 
 function getOTP() {
-    const otp = parseInt(OTPDOM.value);
+    const otp = OTPDOM.value;
     confirmationResult.confirm(otp).then(function (result) {
         console.log(result);
         var user = result.user;
-        // ...
+        alert("auth sucessful");
       }).catch(function (error) {
         console.log(error);
+        alert(error.message);
       });
 }
