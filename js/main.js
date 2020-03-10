@@ -3,6 +3,8 @@
  	easing: 'slide'
  });
 
+ 
+
 (function($) {
 
 	"use strict";
