@@ -85,7 +85,7 @@ function signInWithEmail(){
 }
 
 (function recaptcha(){
-    window.recaptchaVerifier = new firebase.auth.recaptchaVerifier('recaptchacontainer');
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptchacontainer');
     recaptchaVerifier.render();
 })();
 
