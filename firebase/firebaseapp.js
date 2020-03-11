@@ -136,8 +136,9 @@ function getOTP() {
     confirmationResult.confirm(otp).then(function (result) {
         console.log(result);
         var user = result.user;
-        alert("auth sucessful");
+        //alert("auth sucessful");
         saveUserInDB(user.uid);
+        //yet to redirect
       }).catch(function (error) {
         console.log(error);
         alert(error.message);
