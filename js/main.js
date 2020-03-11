@@ -3,6 +3,8 @@
  	easing: 'slide'
  });
 
+ //weather
+
  
 
 (function($) {

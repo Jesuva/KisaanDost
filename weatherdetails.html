@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+        <title>Weather</title>
+        <link rel="stylesheet" href="scss/weather.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    </head>
+
+    <body background="images/weatherbg.jpg">
+        <div id="google_translate_element"></div>
+        <h1 id="intro">Kisaan Dost</h1><br><br>
+        <h1 id="intro">weather Prediction</h1>
+        
+        <div id="searchContainer">
+            <input class="searchControl" type="text"  placeholder="Please Enter City Name" id="searchInput" style="width:100%;">
+            <br><br>
+            <button class="searchControl" id="searchBtn">Go!</button>
+            <button class="searchControl" id="goback">Back</button>
+        </div>
+        <div id="weatherContainer">
+            <div id="weatherDescription">
+                <h1 id="cityHeader"></h1>
+                <div id="weatherMain">
+                    <div id="temperature"></div>
+                    <div id="weatherDescriptionHeader"></div>
+                    <div><img id="documentIconImg"></div>
+                    
+                </div>
+                <hr>
+                <div id="windSpeed" class="bottom-details"></div>
+                <div id="humidity" class="bottom-details"></div>
+                <div id="idea" class="bottom-details"></div>
+            </div>
+        </div>
+        
+        <script src="js/main.js" ></script>
+        <script src="js/weather.js" ></script>
+        <script src="js/translator.js"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </body>
+</html>

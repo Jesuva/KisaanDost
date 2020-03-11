@@ -28,9 +28,13 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!--weather Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 </head>
 
-<body class="goto-here">
+<body class="goto-here" onload="weather();">
     <div class="modal fade bd-example-modal-sm" tabindex="-1" id="mymodal" role="dialog">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
@@ -197,7 +201,10 @@
                         <div class="col-md-6 ">
                             <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end " style="background-image: url(images/category-1.jpg); ">
                                 <div class="text px-3 py-1 ">
-                                    <h2 class="mb-0 "><a href="# ">Weather</a></h2>
+                                    <h2 id="location"></h2>
+                                    <h2 id="temperature"></h2>
+                                             
+                                    <h2 class="mb-0 "><a href="weatherdetails.html">Weather</a></h2>
                                 </div>
                             </div>
                             <div class="category-wrap ftco-animate img d-flex align-items-end " style="background-image: url(images/category-2.jpg); ">
@@ -216,6 +223,7 @@
                         </div>
                     </div>
                     <div class="category-wrap ftco-animate img d-flex align-items-end " style="background-image: url(images/category-4.jpg); ">
+                        
                         <div class="text px-3 py-1 ">
                             <h2 class="mb-0 "><a href="# ">Exports and Imports</a></h2>
                         </div>
@@ -584,6 +592,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false "></script>
     <script src="js/google-map.js "></script>
     <script src="js/main.js "></script>
+    <script src="js/weather.js"></script>
     <!-- firebaseapp -->
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
